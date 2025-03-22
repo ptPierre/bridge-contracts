@@ -1,7 +1,7 @@
 # Bridge Contracts
 
 This repo implements a simplified version of bridge contracts between two blockchains.
-This is just the implementation of the contracts. The usage is automated by an indexer written in Rust that can be found here (Indexer)[https://github.com/ptPierre/bridge-indexer]
+This is just the implementation of the contracts. The usage is automated by an indexer written in Rust that can be found here [Indexer](https://github.com/ptPierre/bridge-indexer)
 
 ## Getting started
 
