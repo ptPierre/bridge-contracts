@@ -1,6 +1,7 @@
 # Bridge Contracts
 
 This repo implements a simplified version of bridge contracts between two blockchains.
+This is just the implementation of the contracts. The usage is automated by an indexer written in Rust that can be found here (Indexer)[https://github.com/ptPierre/bridge-indexer]
 
 ## Getting started
 
@@ -10,91 +11,29 @@ forge installed
 ### Configuration
 Create a `.env` file following the .env.example file.
 
+### Contract addresses:
+The contract addresses can be found under `contrcats.txt`
+
 ### Running
 Build the contracts:
    ```
    forge build
    ```
-Deploy the contracts to Holesky
+Deploy the contracts to Holesky:
     ```
     source .env
-    ```
-    ```
     forge script script/DeployTokenBridge.s.sol:DeployTokenBridge --rpc-url $HOLESKY_RPC_URL --broadcast --verify
     ```
-Deploy the contracts to Sepolia
+Deploy the contracts to Sepolia:
     ```
     source .env
-    ```
-    ```
     forge script script/DeployTokenBridge.s.sol:DeployTokenBridge --rpc-url $TARGET_CHAIN_RPC_URL --broadcast
     ```
 
+### Manual usage (without the indexer)
+1. Make sure all the contracts are funded with the tokens
+2. Make sure the bridge contract is allowed to spend your tokens
+3. Create a deploy transaction
+4. Save the emitted data from this transaction
+5. Create a distribute transaction on the target chain
 
-
-## Foundry
-
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
