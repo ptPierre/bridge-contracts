@@ -18,11 +18,15 @@ Build the contracts:
 Deploy the contracts to Holesky
     ```
     source .env
+    ```
+    ```
     forge script script/DeployTokenBridge.s.sol:DeployTokenBridge --rpc-url $HOLESKY_RPC_URL --broadcast --verify
     ```
 Deploy the contracts to Sepolia
     ```
     source .env
+    ```
+    ```
     forge script script/DeployTokenBridge.s.sol:DeployTokenBridge --rpc-url $TARGET_CHAIN_RPC_URL --broadcast
     ```
 
