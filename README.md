@@ -1,3 +1,33 @@
+# Bridge Contracts
+
+This repo implements a simplified version of bridge contracts between two blockchains.
+
+## Getting started
+
+### Prerequisites
+forge installed
+
+### Configuration
+Create a `.env` file following the .env.example file.
+
+### Running
+Build the contracts:
+   ```
+   forge build
+   ```
+Deploy the contracts to Holesky
+    ```
+    source .env
+    forge script script/DeployTokenBridge.s.sol:DeployTokenBridge --rpc-url $HOLESKY_RPC_URL --broadcast --verify
+    ```
+Deploy the contracts to Sepolia
+    ```
+    source .env
+    forge script script/DeployTokenBridge.s.sol:DeployTokenBridge --rpc-url $TARGET_CHAIN_RPC_URL --broadcast
+    ```
+
+
+
 ## Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
